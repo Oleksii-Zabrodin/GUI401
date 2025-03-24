@@ -1,0 +1,3 @@
+../CustomDrivers/u8g2/u8g2_stm32.c:16:9:u8x8_byte_hw_i2c	4
+../CustomDrivers/u8g2/u8g2_stm32.c:44:9:u8x8_byte_hw_spi	1
+../CustomDrivers/u8g2/u8g2_stm32.c:54:9:u8x8_gpio_and_delay_stm32	5

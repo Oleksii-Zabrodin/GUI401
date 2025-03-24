@@ -1,0 +1,3 @@
+../View/MainScreenView.cpp:10:1:MainScreenView::MainScreenView()	1
+../View/MainScreenView.cpp:15:1:MainScreenView::~MainScreenView()	1
+../View/MainScreenView.cpp:15:1:virtual MainScreenView::~MainScreenView()	1
