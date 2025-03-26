@@ -1,5 +1,9 @@
-../Controller/MainViewController.cpp:16:7:virtual void MainViewController::handleEvent(EventSender*, UserEvent)	9
-../Controller/MainViewController.cpp:47:7:void MainViewController::update()	2
-../Controller/MainViewController.cpp:56:7:void MainViewController::drawMainScreen(u8g2_t*, int, bool, bool, bool, bool)	8
+/Users/lex/STM32CubeIDE/workspace_1.17.0/GUI401/Model/VideoChannel.h:17:2:VideoChannel::VideoChannel()	1
+/Users/lex/STM32CubeIDE/workspace_1.17.0/GUI401/Model/VideoChannel.h:18:2:VideoChannel::VideoChannel(uint16_t, uint16_t, uint8_t, uint8_t, uint8_t)	1
+../Controller/MainViewController.cpp:18:12:int compareCnannelsByRSSI(const void*, const void*)	1
+../Controller/MainViewController.cpp:22:1:MainViewController::MainViewController(u8g2_t&)	2
+../Controller/MainViewController.cpp:41:7:virtual void MainViewController::handleEvent(EventSender*, UserEvent)	9
+../Controller/MainViewController.cpp:72:7:void MainViewController::update()	2
+../Controller/MainViewController.cpp:81:7:void MainViewController::drawMainScreen(u8g2_t*, int, bool, bool, bool, bool)	8
 ../Controller/MainViewController.h:16:7:MainViewController::~MainViewController()	1
 ../Controller/MainViewController.h:16:7:virtual MainViewController::~MainViewController()	1

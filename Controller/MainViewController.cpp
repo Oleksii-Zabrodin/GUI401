@@ -10,8 +10,33 @@
 #include "UserEvent.h"
 #include "../../Auxiliary/CustomAuxiliary.h"
 #include <string>
+#include <stdlib.h>
+#include <string.h>
 
 #define kChannelLinesCount 2
+
+static int compareCnannelsByRSSI(const void *a, const void *b) {
+    return ((*(VideoChannel*)a).rssi - (*(VideoChannel*)b).rssi);
+}
+
+MainViewController::MainViewController(u8g2_t& u8g2): u8g2(u8g2) {
+	VideoChannel unsortedChannels[10] = {
+				VideoChannel(5865, -1, 1, 1, 1),
+				VideoChannel(5880, 2, 1, 1, 1),
+				VideoChannel(5771, -3, 1, 1, 1),
+				VideoChannel(5695, 4, 1, 1, 1),
+				VideoChannel(5413, 6, 1, 1, 1),
+				VideoChannel(5079, 5, 1, 1, 1),
+				VideoChannel(4995, -7, 1, 1, 1),
+				VideoChannel(5959, 8, 1, 1, 1),
+				VideoChannel(6001, 19, 1, 1, 1),
+				VideoChannel(6183, 10, 1, 1, 1)
+	};
+
+	size_t n = sizeof(unsortedChannels) / sizeof(unsortedChannels[0]);
+	qsort(unsortedChannels, n, sizeof(VideoChannel), compareCnannelsByRSSI);
+	memcpy(channels, unsortedChannels, mini(sizeof(unsortedChannels), sizeof(channels)));
+};
 
  void MainViewController::handleEvent(EventSender* eventSender, UserEvent userEvent) {
 	 if (userEvent.state == UserEventState::Long) {
