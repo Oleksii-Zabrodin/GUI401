@@ -14,11 +14,15 @@ extern const uint16_t SM137R_Channel_channelTable[9][5];
 extern const uint16_t channelFreqTable[];
 
 struct VideoChannel {
+	VideoChannel(uint16_t frequency, uint16_t rssi,  uint8_t lifetime, uint8_t receiver, uint8_t cyclesPresense): frequency(frequency), rssi(rssi), lifetime(lifetime), receiver(receiver), cyclesPresense(cyclesPresense) {};
+
     uint16_t frequency;
-    uint16_t rssi;
+    int16_t rssi;
     uint8_t lifetime;
     uint8_t receiver;
     uint8_t cyclesPresense;
 };
+
+void getChannelName(uint16_t frequency, int receiver, char printBuffer[24]);
 
 #endif /* VIDEOCHANNEL_H_ */

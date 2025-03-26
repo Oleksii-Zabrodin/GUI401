@@ -6,7 +6,8 @@
  */
 
 
-#include "VideoChannel.hpp"
+#include "VideoChannel.h"
+#include <string>
 
 const uint16_t SM137R_Channel_channelTable[9][5] __attribute__((section(".rodata"))) = {
     {0, 0, 0 ,1, 1080},  // A1 / B1 (1080 MHz / 1560 MHz)
@@ -69,4 +70,27 @@ const uint16_t Band_X[8] = 					{ 4991, 5021, 5049, 5079, 5109, 5139, 5171, 5201
 const uint16_t Band_J[8] = 					{ 4867, 4883, 4921, 4958, 4995, 5032, 5069, 5099 }; // J
 const uint16_t Band_K[8] = 					{ 5959, 5979, 5999, 6019, 6039, 6059, 6079, 6101 }; // K
 const uint16_t Band_Z[8] = 					{ 6001, 6027, 6053, 6079, 6105, 6131, 6157, 6183 };  // Z
+
+void getChannelName(uint16_t frequency, int receiver, char printBuffer[24]) {
+//  if (receiver == 1) {
+    for (uint8_t i = 0; i < 137; i++) {
+      if (channelFreqTable[i] == frequency) {
+        char band = 'A' + (i / 8); // определяем бенд (A, B, E, F, ...)
+        uint8_t channel = (i % 8) + 1; // номер канала в бенде
+        snprintf(printBuffer, sizeof(printBuffer), " CH\:%c %i", band, channel);
+        return;
+      }
+    }
+//  } else {
+//    for (uint8_t i = 0; i < 8; i++) {
+//      if (channelTable[i].freq == frequency) {
+//        snprintf(printBuffer, sizeof(printBuffer), " CH:A%i", i + 1);
+//        return;
+//      }
+//    }
+//  }
+
+  printBuffer = " CH:--";
+  return;
+}
 

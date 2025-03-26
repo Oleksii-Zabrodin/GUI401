@@ -1,0 +1,3 @@
+../Auxiliary/CustomAuxiliary.cpp:10:6:int maxi(int, int)	2
+../Auxiliary/CustomAuxiliary.cpp:11:6:int mini(int, int)	2
+../Auxiliary/CustomAuxiliary.cpp:12:6:int boundi(int, int, int)	1

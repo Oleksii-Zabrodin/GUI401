@@ -8,7 +8,7 @@
 #ifndef VIDEOCHANNELMENUVIEWMODEL_H_
 #define VIDEOCHANNELMENUVIEWMODEL_H_
 
-#include "VideoChannel.hpp"
+#include "VideoChannel.h"
 
 class VideoChannelMenuViewModel {
 public:
