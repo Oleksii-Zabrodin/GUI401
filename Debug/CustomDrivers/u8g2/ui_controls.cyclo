@@ -1,0 +1,7 @@
+../CustomDrivers/u8g2/ui_controls.c:11:6:drawBatteryIndicator	2
+../CustomDrivers/u8g2/ui_controls.c:18:5:constrain	2
+../CustomDrivers/u8g2/ui_controls.c:22:6:drawSignalStrengthIndicator	3
+../CustomDrivers/u8g2/ui_controls.c:57:6:drawSoundIcon	2
+../CustomDrivers/u8g2/ui_controls.c:65:6:drawAlertIcon	1
+../CustomDrivers/u8g2/ui_controls.c:70:6:showSplashScreen	1
+../CustomDrivers/u8g2/ui_controls.c:76:6:drawMainScreen	3

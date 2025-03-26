@@ -9,6 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include ViewModel/subdir.mk
 -include View/subdir.mk
 -include SSD1306/subdir.mk
 -include Model/subdir.mk
@@ -16,8 +17,10 @@ RM := rm -rf
 -include CustomDrivers/u8g2/csrc/subdir.mk
 -include CustomDrivers/u8g2/cppsrc/subdir.mk
 -include CustomDrivers/u8g2/subdir.mk
+-include CustomDrivers/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Controller/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

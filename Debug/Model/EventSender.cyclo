@@ -1,0 +1,3 @@
+../Model/EventSender.cpp:10:1:EventSender::EventSender()	1
+../Model/EventSender.cpp:15:1:EventSender::~EventSender()	1
+../Model/EventSender.cpp:15:1:virtual EventSender::~EventSender()	1

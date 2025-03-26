@@ -1,0 +1,3 @@
+../Controller/ViewController.cpp:10:1:ViewController::ViewController()	1
+../Controller/ViewController.cpp:15:1:ViewController::~ViewController()	1
+../Controller/ViewController.cpp:15:1:virtual ViewController::~ViewController()	1

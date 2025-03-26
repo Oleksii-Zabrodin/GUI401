@@ -1,0 +1,4 @@
+../Controller/MainViewController.cpp:12:7:virtual void MainViewController::handleEvent(EventSender*, UserEvent)	4
+../Controller/MainViewController.cpp:25:7:void MainViewController::update()	2
+../Controller/MainViewController.h:15:7:MainViewController::~MainViewController()	1
+../Controller/MainViewController.h:15:7:virtual MainViewController::~MainViewController()	1

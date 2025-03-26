@@ -38,8 +38,10 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Controller \
 Core/Src \
 Core/Startup \
+CustomDrivers \
 CustomDrivers/u8g2/cppsrc \
 CustomDrivers/u8g2/csrc \
 CustomDrivers/u8g2 \
@@ -47,4 +49,5 @@ Drivers/STM32F4xx_HAL_Driver/Src \
 Model \
 SSD1306 \
 View \
+ViewModel \
 

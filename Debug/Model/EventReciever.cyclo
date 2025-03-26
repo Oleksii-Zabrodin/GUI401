@@ -1,0 +1,3 @@
+../Model/EventReciever.cpp:10:1:EventReciever::EventReciever()	1
+../Model/EventReciever.cpp:15:1:EventReciever::~EventReciever()	1
+../Model/EventReciever.cpp:15:1:virtual EventReciever::~EventReciever()	1

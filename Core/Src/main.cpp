@@ -26,9 +26,15 @@
 /* USER CODE BEGIN Includes */
 #include "u8g2.h"
 #include "u8g2_stm32.h"
+#include "mui.h"
 
-#include "../../SSD1306/ssd1306.h"
-#include "../../SSD1306/ssd1306_fonts.h"
+#include "ui_controls.h"
+
+#include "UserActionPanel.h"
+#include "MainViewController.h"
+
+//#include "../../SSD1306/ssd1306.h"
+//#include "../../SSD1306/ssd1306_fonts.h"
 
 /* USER CODE END Includes */
 
@@ -62,14 +68,81 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 u8g2_t u8g2;
+mui_t mui;
+
+UserActionPanel userActionPanel;
+
+uint8_t myMenuCallback(mui_t *ui, uint8_t msg) {
+    if (msg == MUIF_MSG_DRAW) {
+        u8g2_DrawStr(&u8g2, 10, 20, "Hello, MUI!");
+    }
+    return 0;
+}
+
+//mui_menu_entry_t menu[] = {
+//    {1, "Start",  myMenuCallback},  // Пункт меню "Start"
+//    {2, "Settings", myMenuCallback}, // "Settings"
+//    {3, "About", myMenuCallback},   // "About"
+//    {0, NULL, NULL} // Кінець меню (важливо!)
+//};
+
+//const mui_menu_entry_t main_menu[] = {
+//  {MUI_MENU_HEADER, "Main Menu"},
+//  {MUI_MENU_BUTTON, "Start", MUI_ACTION_GOTO, 1},
+//  {MUI_MENU_BUTTON, "Settings", MUI_ACTION_GOTO, 2},
+//  {MUI_MENU_BUTTON, "Exit", MUI_ACTION_EXIT, 0}
+//};
+
+uint8_t menu_list[] = { 1, 2, 3, 0 };
+
+//uint8_t drawMenu(mui_t *ui, uint8_t msg) {
+//    if (msg == MUIF_MSG_DRAW) {
+//        switch (mui_GetCurrentFormId(ui)) {
+//            case 1: mui_Draw(&mui, 10, 20, "Start"); break;
+//            case 2: mui_DrawStr(&mui, 10, 40, "Settings"); break;
+//            case 3: mui_DrawStr(&mui, 10, 60, "About"); break;
+//        }
+//    }
+//    return 0;
+//}
+
+fds_t fds[] = {
+    1,
+    2,
+	3
+};
+
+muif_t muif[] = {
+    1,
+    2,
+	3
+};
 
 void u8g2_Init(void) {
 	u8g2_Setup_ssd1306_i2c_128x32_univision_f(&u8g2, U8G2_R0, u8x8_byte_hw_i2c, u8x8_gpio_and_delay_stm32);
     u8g2_InitDisplay(&u8g2);
     u8g2_SetPowerSave(&u8g2, 0);
+    u8g2_SetFont(&u8g2, u8g2_font_5x8_t_cyrillic);
 
-    u8g2_DrawHLine(&u8g2, 0, 0, 40);
+    u8g2_ClearBuffer(&u8g2);
     u8g2_SendBuffer(&u8g2);
+
+
+//    mui_Init(&mui, &u8g2, fds, muif, sizeof(muif) / sizeof(muif_t));
+//    mui_Register(&mui, 0, myMenuCallback);
+//    mui_ListInit(&mui, menu_list);
+//    mui_GotoForm(&mui, 1, 0);
+
+////    ssd1306_Init();
+//
+//
+//    u8g2_DrawVLine(&u8g2, 0, 10, 20);
+//    u8g2_DrawHLine(&u8g2, 0, 0, 20);
+//    u8g2_SendBuffer(&u8g2);
+
+//    ssd1306_SetCursor(5, 5);
+//    ssd1306_WriteString("qwerty", Font_16x26, White);
+//    ssd1306_UpdateScreen();
 }
 
 /* USER CODE END 0 */
@@ -114,7 +187,7 @@ int main(void)
 
 //  u8g2_ClearBuffer(&u8g2);
 //  u8g2_SetFont(&u8g2, u8g2_font_ncenB08_tr);
-//  u8g2_DrawStr(&u8g2, 10, 20, "Hello STM32!");
+//  u8g2_DrawStr(&u8g2, 10, 10, "Hello STM32!");
 //  u8g2_SendBuffer(&u8g2);
 //
 //  u8g2_DrawHLine(&u8g2, 0, 0, 100);
@@ -123,12 +196,21 @@ int main(void)
 //  ssd1306_Line(10, 5, 108, 5, White);
 //  ssd1306_UpdateScreen();
 
+  MainViewController mainViewController = MainViewController(u8g2);
+  userActionPanel.eventReciever = &mainViewController;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  mainViewController.update();
+
+//	  u8g2_ClearBuffer(&u8g2);
+//	  mui_Draw(&mui);
+//	  u8g2_SendBuffer(&u8g2);
+
 //	  u8g2_ClearBuffer(&u8g2);
 ////	  u8g2_SetDrawColor(&u8g2, 1);
 //	  u8g2_DrawLine(&u8g2, 5, 5, 100, 5);
@@ -190,6 +272,9 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	userActionPanel.handleInterrupt(GPIO_Pin);
+}
 
 /* USER CODE END 4 */
 

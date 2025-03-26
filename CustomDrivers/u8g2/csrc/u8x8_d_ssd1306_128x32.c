@@ -51,67 +51,22 @@ static const uint8_t u8x8_d_ssd1306_128x32_univision_init_seq[] = {
   U8X8_C(0x040),		                /* set display start line to 0 */
   U8X8_CA(0x08d, 0x014),		/* [2] charge pump setting (p62): 0x014 enable, 0x010 disable */
   U8X8_CA(0x020, 0x000),		/* horizontal addressing mode */
-
+  
   U8X8_C(0x0a1),				/* segment remap a0/a1*/
   U8X8_C(0x0c8),				/* c0: scan dir normal, c8: reverse */
   // Flipmode
   // U8X8_C(0x0a0),				/* segment remap a0/a1*/
   // U8X8_C(0x0c0),				/* c0: scan dir normal, c8: reverse */
-
+  
   U8X8_CA(0x0da, 0x002),		/* com pin HW config, sequential com pin config (bit 4), disable left/right remap (bit 5) */
   U8X8_CA(0x081, 0x08f),		/* [2] set contrast control */
   U8X8_CA(0x0d9, 0x0f1),		/* [2] pre-charge period 0x022/f1*/
   U8X8_CA(0x0db, 0x040),		/* vcomh deselect level */
-
-  U8X8_C(0x02e),				/* Deactivate scroll */
+  
+  U8X8_C(0x02e),				/* Deactivate scroll */ 
   U8X8_C(0x0a4),				/* output ram to display */
   U8X8_C(0x0a6),				/* none inverted normal display mode */
-  
-  
-//  U8X8_CA(0x020, 0x000),
-//  U8X8_C(0x0B0),
-//  U8X8_C(0x0c8),
-//  U8X8_CA(0x000, 0x010),
-//  U8X8_C(0x040),
-//  U8X8_C(0x0FF),
-//  U8X8_C(0x0a1),
-//  U8X8_C(0x0a6),
-//  U8X8_CA(0x0a8, 0x03F),
-//  U8X8_C(0x0a4),
-//  U8X8_CA(0x0d3, 0x000),
-//  U8X8_CA(0x0d5, 0x0f0),
-//  U8X8_CA(0x0d9, 0x022),
-//  U8X8_CA(0x0da, 0x012),
-//  U8X8_CA(0x0db, 0x020),
-//  U8X8_CA(0x08d, 0x014),
-//  U8X8_C(0x0af),
-
-//  U8X8_C(0xAE), 		  //display off
-//  U8X8_CA(0xA8, 0x3F), 	  //Set Page Start Address for Page Addressing
-//  	  	  	  	  	   	  //Set COM Output Scan Direction
-//  U8X8_CA(0xD3, 0x00),    //set low column address
-//   	   	   	   	   	   	  //set high column address
-//  U8X8_C(0x40), 		  //set start line address
-//  U8X8_C(0xA0), 		  //set multiplex ratio(1 to 64)
-//  U8X8_C(0xC0),    		  //
-//  U8X8_CA(0xDA, 0x02), 	  //0xa4,Output follows RAM
-//  	  	  	  	  	  	  //set display offset
-//  U8X8_CA(0x81, 0x7F), 	  //not offset
-//  	  	  	  	  	  	  //set display clock divide ratio/oscillator frequency
-//  U8X8_C(0xA4),
-//  U8X8_C(0xA6), 		  //set vcomh
-//  U8X8_CA(0xD5, 0xf0), 	  //Set Memory Addressing Mode
-//		  	  	  	  	  //00,Horizontal Addressing Mode;01,Vertical
-//  U8X8_CA(0x8D, 0x14), 	  //set contrast control register
-//  U8X8_CA(0x20, 0x00), 	  //set segment re-map 0 to 127
-//  	  	  	  	  	  	  //set normal display
-//  U8X8_CA(0xD9, 0x22), 	  //set divide ratio
-//  	  	  	  	  	  	  //set pre-charge period
-//  	  	  	  	  	  	  //  U8X8_CA(0xDB, 0x40),
-//  	  	  	  	  	  	  //set com pins hardware configuration
-//  U8X8_CA(0x81, 0xff),
-//  U8X8_C(0xAF), 		  //0x20,0.77xVcc
-
+    
   U8X8_END_TRANSFER(),             	/* disable chip */
   U8X8_END()             			/* end of sequence */
 };

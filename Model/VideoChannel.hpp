@@ -8,6 +8,11 @@
 #ifndef VIDEOCHANNEL_H_
 #define VIDEOCHANNEL_H_
 
+#include <stdint.h>
+
+extern const uint16_t SM137R_Channel_channelTable[9][5];
+extern const uint16_t channelFreqTable[];
+
 struct VideoChannel {
     uint16_t frequency;
     uint16_t rssi;

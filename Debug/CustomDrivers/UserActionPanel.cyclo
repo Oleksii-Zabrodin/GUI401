@@ -1,0 +1,10 @@
+/Users/lex/STM32CubeIDE/workspace_1.17.0/GUI401/Model/UserEvent.h:18:2:UserEvent::UserEvent(UserEventState, UserEventType)	1
+../CustomDrivers/UserButton.h:24:2:UserButton::UserButton(uint16_t, GPIO_TypeDef*)	1
+../CustomDrivers/UserButton.h:15:7:constexpr UserButtonDelegate::UserButtonDelegate()	1
+../CustomDrivers/UserActionPanel.cpp:12:1:UserActionPanel::UserActionPanel()	1
+../CustomDrivers/UserActionPanel.cpp:20:1:UserActionPanel::~UserActionPanel()	1
+../CustomDrivers/UserActionPanel.cpp:20:1:virtual UserActionPanel::~UserActionPanel()	1
+../CustomDrivers/UserActionPanel.cpp:24:6:void UserActionPanel::handleInterrupt(uint16_t)	5
+../CustomDrivers/UserActionPanel.cpp:34:6:virtual void UserActionPanel::onButtonDown(UserButton*)	7
+../CustomDrivers/UserActionPanel.cpp:47:6:virtual void UserActionPanel::onButtonUp(UserButton*)	7
+../CustomDrivers/UserActionPanel.cpp:60:6:virtual void UserActionPanel::onButtonLong(UserButton*)	7
