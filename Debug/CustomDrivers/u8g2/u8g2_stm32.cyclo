@@ -1,3 +1,6 @@
-../CustomDrivers/u8g2/u8g2_stm32.c:17:9:u8x8_byte_hw_i2c	5
-../CustomDrivers/u8g2/u8g2_stm32.c:40:9:u8x8_byte_hw_spi	1
-../CustomDrivers/u8g2/u8g2_stm32.c:50:9:u8x8_gpio_and_delay_stm32	5
+../CustomDrivers/u8g2/u8g2_stm32.c:26:9:sendI2cBuffer	2
+../CustomDrivers/u8g2/u8g2_stm32.c:34:9:u8x8_byte_i2c_dma	7
+../CustomDrivers/u8g2/u8g2_stm32.c:69:9:u8x8_byte_hw_spi	1
+../CustomDrivers/u8g2/u8g2_stm32.c:79:9:u8x8_gpio_and_delay_stm32	5
+../CustomDrivers/u8g2/u8g2_stm32.c:95:6:HAL_I2C_MasterTxCpltCallback	3
+../CustomDrivers/u8g2/u8g2_stm32.c:106:6:HAL_I2C_ErrorCallback	1

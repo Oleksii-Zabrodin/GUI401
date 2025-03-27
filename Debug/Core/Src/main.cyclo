@@ -1,10 +1,10 @@
-../Core/Src/main.cpp:75:9:uint8_t myMenuCallback(mui_t*, uint8_t)	2
-../Core/Src/main.cpp:121:6:void u8g2_Init()	1
-../Core/Src/main.cpp:154:5:int main()	1
-../Core/Src/main.cpp:232:6:void SystemClock_Config()	3
-../Core/Src/main.cpp:275:6:void HAL_GPIO_EXTI_Callback(uint16_t)	1
-../Core/Src/main.cpp:285:6:void Error_Handler()	1
-../Core/Src/main.cpp:294:1:void __static_initialization_and_destruction_0()	1
-../Core/Src/main.cpp:294:1:void __static_initialization_and_destruction_1()	1
-../Core/Src/main.cpp:294:1:cpp)	1
-../Core/Src/main.cpp:294:1:cpp)	1
+../Core/Src/main.cpp:76:9:uint8_t myMenuCallback(mui_t*, uint8_t)	2
+../Core/Src/main.cpp:122:6:void u8g2_Init()	1
+../Core/Src/main.cpp:155:5:int main()	1
+../Core/Src/main.cpp:234:6:void SystemClock_Config()	3
+../Core/Src/main.cpp:277:6:void HAL_GPIO_EXTI_Callback(uint16_t)	1
+../Core/Src/main.cpp:287:6:void Error_Handler()	1
+../Core/Src/main.cpp:296:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/main.cpp:296:1:void __static_initialization_and_destruction_1()	1
+../Core/Src/main.cpp:296:1:cpp)	1
+../Core/Src/main.cpp:296:1:cpp)	1
